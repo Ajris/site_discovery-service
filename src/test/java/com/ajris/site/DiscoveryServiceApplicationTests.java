@@ -1,4 +1,4 @@
-package com.ajris.site.discoveryservice;
+package com.ajris.site;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

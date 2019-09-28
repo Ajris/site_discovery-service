@@ -27,3 +27,10 @@ dependencyManagement {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.ajris.site.DiscoveryServiceApplication'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
