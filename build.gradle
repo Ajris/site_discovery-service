@@ -3,6 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'org.sonarqube' version '2.7.1'
     id 'java'
+    id 'jacoco'
 }
 
 group = 'com.ajris.site'
