@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.1.8.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'org.sonarqube' version '2.7.1'
     id 'java'
 }
 
@@ -33,4 +34,26 @@ jar {
         attributes 'Main-Class': 'com.ajris.site.DiscoveryServiceApplication'
     }
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+
+jacoco {
+    toolVersion = "0.8.4"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.projectName", "API Gateway"
+        property "sonar.projectKey", "Ajris_site_api-gateway"
+    }
 }
