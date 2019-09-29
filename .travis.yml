@@ -16,7 +16,7 @@ addons:
     token:
       secure: PRTj3Q4JQKHHp6B0KToj8Uwunk1crWIfYSJjFlMM0zkiZgyut5WRFt1jBFMvZWuavWFXZ100S21CYSG9p54UsnMVo3R+uc4FcZgGFsoFMhvaAEBIPSse4zzxkBlcGoXIKziVcQKJMZwM0R+EmlhBD1+bIeyMBfuD7h96QuT0Vkj7MJBuBQ8q0sUnw0kUy9RroFvijK0tUHETN8QLZ+9VOO6+cZV0x4CFOw62vHtvk0c4Dk+mjA5ZtMEPPNX0X0DHud+DwcrDCVIc0/+5s2nuTOsgPSA8raNB1EsO+7i4E6eLR2uq5dxk7dULMnmElkISCp39rMR98WZPUcV6bSiwJgLrVosGgxu+DRUlrIs/CCfvoE9OQRiKFQC+1Wc/qRsuzmIcG9gcOTOI9mJcQf7oUhvez22vZr+07PtXWSs2+QZJ0AeQWALHesaJLFalC7l7M86e3Z4uK1wSTEUqeXBKiGjCqpwGWCa1k8/Ky6CR71irkablUPywunCLaLz8sZCtqsM0cGgfpg36VDYhorJbm0ieTg0eymgxSqlwuKdYQ43YrPwES+CMwJYZVUTiw7UcOql9fQ3LRm7S7XyG+ZCKuPhYKjt1m7p2AmLORm3b6b2fYS9Y3lc7CCEiN2rF9hY8TYHWba7NnT3yax3GHXuKAGZge/OVV/qc9n96FTL7jz4=
 script:
-- "./gradlew sonarqube"
+- ./gradlew sonarqube
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
 - export TAG=`if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then if [ "$TRAVIS_BRANCH"
